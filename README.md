@@ -6,7 +6,7 @@
 
 ## Configuração
 #### neovim
- Dentro do diretório ~/.config execute um git clone.
+ Navegue até o diretório ~/.config execute um git clone.
 ```
 git clone https://github.com/RenatoValentim/nvim.git
 ```
@@ -14,7 +14,6 @@ Instale os pré-requisitos, abra o init.vim e instale os plugins.
 ```
 :PlugInstall
 ```
-
 ##### Sugestão para instalar suas extensões
 
 * [coc](https://github.com/neoclide/coc.nvim/blob/master/Readme.md)
