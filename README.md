@@ -16,5 +16,5 @@ Instale os pré-requisitos, abra o init.vim e instale os plugins.
 ```
 ##### Sugestão para instalar suas extensões
 
-* [coc](https://github.com/neoclide/coc.nvim/blob/master/Readme.md)
+* [coc](https://github.com/neoclide/coc.nvim)
 
