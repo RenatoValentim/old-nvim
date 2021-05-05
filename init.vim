@@ -2,7 +2,7 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'cohama/lexima.vim'
@@ -50,3 +50,7 @@ nnoremap <c-p> :Files<cr>
 nnoremap <c-f> :Ag<space>
 
 let g:UltiSnipsEditSplit="vertical"
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
