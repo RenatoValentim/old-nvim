@@ -18,4 +18,5 @@ Instale os pré-requisitos, abra o init.vim e instale os plugins.
 
 * [coc](https://github.com/neoclide/coc.nvim)
 * [Extenções coc](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions)
+* [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
 
