@@ -22,14 +22,15 @@ Plug 'itchyny/lightline.vim'
 " Initialize plugin system
 call plug#end()
 
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+nnoremap w :w!<CR>
+nnoremap q :q!<CR>
 
 inoremap jk <ESC>
 nmap <C-b> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
+
+let g:lightline = {'colorscheme': 'wombat'}
 
 " open NERDTree automatically
 "autocmd StdinReadPre * let s:std_in=1
