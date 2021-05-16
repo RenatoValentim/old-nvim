@@ -15,13 +15,13 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
+let mapleader="\<space>"
+
 "=== Custom ==="
 nnoremap w :w!<CR>
 nnoremap q :q!<CR>
 inoremap jk <ESC>
 nmap <C-b> :NERDTreeToggle<CR>
-vmap ++ <plug>NERDCommenterToggle
-nmap ++ <plug>NERDCommenterToggle
 
 "=== j/k will move virtual lines (lines that wrap) ==="
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
@@ -134,7 +134,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-let mapleader="\<space>"
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 nnoremap <c-p> :GFiles<cr>
 nnoremap <c-f> :Files<cr>
