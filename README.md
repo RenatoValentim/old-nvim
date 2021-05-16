@@ -3,6 +3,8 @@
 ## Pré-requisitos
 * [neovim](https://github.com/neovim/neovim)
 * [vim-plug](https://github.com/junegunn/vim-plug)
+* python
+* [Pynvim](https://github.com/neovim/pynvim)
 
 ## Configuração
 #### neovim
