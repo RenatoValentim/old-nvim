@@ -13,6 +13,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 let mapleader="\<space>"
@@ -22,6 +23,7 @@ nnoremap w :w!<CR>
 nnoremap q :q!<CR>
 inoremap jk <ESC>
 nmap <C-b> :NERDTreeToggle<CR>
+nmap <leader>d dd
 
 "=== j/k will move virtual lines (lines that wrap) ==="
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
