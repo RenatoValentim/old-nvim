@@ -15,6 +15,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'overcache/NeoSolarized'
+Plug 'metakirby5/codi.vim'
+Plug 'APZelos/blamer.nvim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 let mapleader="\<space>"
@@ -25,6 +28,10 @@ nnoremap q :q!<CR>
 inoremap jk <ESC>
 nmap <C-b> :NERDTreeToggle<CR>
 nmap <leader>d dd
+
+"=== Blame config ==="
+let g:blamer_enabled = 1
+let g:blamer_delay = 1
 
 "=== j/k will move virtual lines (lines that wrap) ==="
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
