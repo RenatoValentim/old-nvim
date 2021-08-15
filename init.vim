@@ -14,6 +14,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'overcache/NeoSolarized'
 call plug#end()
 
 let mapleader="\<space>"
@@ -193,9 +194,12 @@ set shortmess+=c
 set signcolumn=yes
 
 "=== Color scheme ==="
-" colorscheme gruvbox
-colorscheme nord
+"colorscheme gruvbox
+"colorscheme nord
+colorscheme NeoSolarized
+
 set termguicolors
+set background=dark
 "set bg=dark
 
 if exists('+termguicolors') && ($TERM == "st-256color" || $TERM == "tmux-256color")
