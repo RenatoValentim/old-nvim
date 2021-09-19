@@ -18,7 +18,13 @@ Plug 'overcache/NeoSolarized'
 Plug 'metakirby5/codi.vim'
 Plug 'APZelos/blamer.nvim'
 Plug 'tpope/vim-fugitive'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
 call plug#end()
+
+let g:indent_guides_enable_on_vim_startup = 1
+set ts=2 sw=2 et
+let g:ident_guides_start_level = 2
 
 let mapleader="\<space>"
 
