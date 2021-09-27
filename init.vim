@@ -20,6 +20,7 @@ Plug 'APZelos/blamer.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
+Plug 'iamcco/markdown-preview.vim'
 call plug#end()
 
 let g:indent_guides_enable_on_vim_startup = 1
@@ -181,6 +182,8 @@ endfunction
 
 "=== Prettier ==="
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 "=== ctrlp ==="
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']

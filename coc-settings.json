@@ -1,3 +1,5 @@
 {
-  "snippets.ultisnips.usePythonx": false
+  "snippets.ultisnips.usePythonx": false,
+  "python.jediEnabled": false,
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown"]
 }
