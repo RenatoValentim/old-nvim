@@ -160,6 +160,7 @@ let g:lightline = {'colorscheme': 'wombat'}
 
 "=== NERDTree config ==="
 let g:NERDTreeGitStatusWithFlags = 1
+let NERDTreeShowHidden = 1
 let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
