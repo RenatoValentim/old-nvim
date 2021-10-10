@@ -1,5 +1,7 @@
 {
   "snippets.ultisnips.usePythonx": false,
   "python.jediEnabled": false,
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown"]
+  "coc.preferences.formatOnSaveFiletypes": [ "typescript", "typescriptreact", "css", "markdown" ],
+  "tsserver.enableJavascript": false,
+  "coc.source.buffer.enable": true
 }
