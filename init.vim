@@ -5,9 +5,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdcommenter'
 Plug 'christoomey/vim-tmux-navigator'
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'arcticicestudio/nord-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -15,7 +14,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'overcache/NeoSolarized'
-Plug 'metakirby5/codi.vim'
 Plug 'APZelos/blamer.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -212,8 +210,8 @@ set signcolumn=yes
 
 "=== Color scheme ==="
 "colorscheme gruvbox
-"colorscheme nord
-colorscheme NeoSolarized
+colorscheme nord
+"colorscheme NeoSolarized
 
 set termguicolors
 set background=dark
