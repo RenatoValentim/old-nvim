@@ -189,6 +189,7 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 
 "=== Enable ==="
 set relativenumber
+:set nu rnu
 set smarttab
 set cindent
 set tabstop=2
