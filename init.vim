@@ -216,6 +216,7 @@ colorscheme nord
 
 set termguicolors
 set background=dark
+hi normal guibg=000000
 "set bg=dark
 
 if exists('+termguicolors') && ($TERM == "st-256color" || $TERM == "tmux-256color")
