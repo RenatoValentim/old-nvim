@@ -19,6 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
 Plug 'iamcco/markdown-preview.vim'
+Plug 'metakirby5/codi.vim'
 call plug#end()
 
 let g:indent_guides_enable_on_vim_startup = 1
