@@ -1,39 +1,94 @@
+"         
+" ██╗███╗   ██╗██╗████████╗██╗   ██╗██╗███╗   ███╗
+" ██║████╗  ██║██║╚══██╔══╝██║   ██║██║████╗ ████║
+" ██║██╔██╗ ██║██║   ██║   ██║   ██║██║██╔████╔██║
+" ██║██║╚██╗██║██║   ██║   ╚██╗ ██╔╝██║██║╚██╔╝██║
+" ██║██║ ╚████║██║   ██║██╗ ╚████╔╝ ██║██║ ╚═╝ ██║
+" ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
+" 
+set nocompatible
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" NerdTree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" Icons
 Plug 'ryanoasis/vim-devicons'
+
 Plug 'vim-airline/vim-airline-themes'
+
+" Others / Utils
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'morhetz/gruvbox'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'iamcco/markdown-preview.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'sheerun/vim-polyglot'
+Plug 'akinsho/toggleterm.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
+
+" Program language 
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'arcticicestudio/nord-vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'overcache/NeoSolarized'
+Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
+
+" Git
 Plug 'APZelos/blamer.nvim'
 Plug 'tpope/vim-fugitive'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
-Plug 'iamcco/markdown-preview.vim'
-Plug 'metakirby5/codi.vim'
+
+"=== Apparence ===
+" Airline
+Plug 'itchyny/lightline.vim'
+" Themes
+Plug 'dracula/vim'
+Plug 'morhetz/gruvbox'
+Plug 'overcache/NeoSolarized'
+Plug 'arcticicestudio/nord-vim'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'ful1e5/onedark.nvim'
 call plug#end()
 
+"=== Ident Guides ==="
 let g:indent_guides_enable_on_vim_startup = 1
 set ts=2 sw=2 et
 let g:ident_guides_start_level = 2
 
+"=== Personal Mapping ==="
+set showcmd
+noremap <SPACE> <Nop>
 let mapleader="\<space>"
-
-"=== Custom ==="
-nnoremap w :w!<CR>
-nnoremap q :q!<CR>
-inoremap jk <ESC>
-nmap <C-b> :NERDTreeToggle<CR>
+nmap <leader>w :w<CR>
+nmap <leader>x :x<CR>
+nmap <leader>q :q<CR>
+nmap <leader>Q :q!<CR>
 nmap <leader>d dd
+nmap <C-b> :NERDTreeToggle<CR>
+inoremap jk <ESC>
+" move line or visually selected block - alt+j/k
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+" move split panes to left/bottom/top/right
+nnoremap <SA-h> <C-W>H
+nnoremap <SA-j> <C-W>J
+nnoremap <SA-k> <C-W>K
+nnoremap <SA-l> <C-W>L
+" move between panes to left/bottom/top/right
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 "=== Blame config ==="
 let g:blamer_enabled = 1
@@ -49,7 +104,7 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
- inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -189,8 +244,7 @@ nmap <leader>f  <Plug>(coc-format-selected)
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 "=== Enable ==="
-set relativenumber
-:set nu rnu
+set nu rnu 
 set smarttab
 set cindent
 set tabstop=2
@@ -201,7 +255,10 @@ set expandtab
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " from readme
 " if hidden is not set, TextEdit might fail.
-set hidden " Some servers have issues with backup files, see #649 set nobackup set nowritebackup " Better display for messages set cmdheight=2 " You will have bad experience for diagnostic messages when it's default 4000.
+set hidden 
+" Some servers have issues with backup files, see #649 set nobackup set nowritebackup
+" Better display for messages set cmdheight=2 
+" You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
 
 " don't give |ins-completion-menu| messages.
@@ -211,20 +268,21 @@ set shortmess+=c
 set signcolumn=yes
 
 "=== Color scheme ==="
-"colorscheme gruvbox
-colorscheme nord
-"colorscheme NeoSolarized
-
 set termguicolors
-set background=dark
-hi normal guibg=000000
-"set bg=dark
 
-if exists('+termguicolors') && ($TERM == "st-256color" || $TERM == "tmux-256color")
-	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-	set termguicolors
-endif
+"colorscheme gruvbox
+"colorscheme nord
+colorscheme dracula
+"colorscheme onedark
+"colorscheme NeoSolarized
+"colorscheme tokyonight
+
+" Transparent
+hi normal guibg=000000
+
+"=== tokyonight config ==="
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
 
 "=== Nord config ==="
 let g:nord_italic = 1
@@ -233,6 +291,12 @@ let g:nord_underline = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
 let g:nord_cursor_line_number_background = 1
+
+if exists('+termguicolors') && ($TERM == "st-256color" || $TERM == "tmux-256color")
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 "=== coc config ==="
 let g:coc_global_extensions = [
@@ -243,4 +307,17 @@ let g:coc_global_extensions = [
   \ 'coc-prettier', 
   \ 'coc-json', 
   \ ]
+
+"=== ToggleTerm ==="
+" set
+let g:toggleterm_terminal_mapping = '<C-t>'
+" or manually...
+autocmd TermEnter term://*toggleterm#*
+      \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+
+" By applying the mappings this way you can pass a count to your
+" mapping to open a specific window.
+" For example: 2<C-t> will open terminal 2
+nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm direction=float"<CR>
+inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm direction=float"<CR>
 
