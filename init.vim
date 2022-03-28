@@ -17,8 +17,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Icons
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'vim-airline/vim-airline-themes'
-
 " Others / Utils
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'nvim-lua/plenary.nvim'
@@ -29,6 +27,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'sheerun/vim-polyglot'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'metakirby5/codi.vim'
 
 " Program language 
 Plug 'HerringtonDarkholme/yats.vim'
@@ -42,6 +41,7 @@ Plug 'tpope/vim-fugitive'
 "=== Apparence ===
 " Airline
 Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline-themes'
 " Themes
 Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
